@@ -1,196 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Md Mahedi Hasan | Sr. Network Security Engineer</title>
-<meta name="description" content="Network and security engineer specialising in Fortinet, Cisco ACI, SD-WAN and data centre networks.">
+<title>Md. Mahedi Hasan – Senior Network Security Engineer</title>
+<meta name="description" content="Senior Network Security Engineer in Dhaka, Bangladesh. Fortinet, Cisco ACI, data center and DC–DR networking, site-to-site VPN and SD-WAN.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#F4F7F9; --card:#FFFFFF; --ink:#13222E; --muted:#5A6B78;
-  --line:#D3DCE3; --signal:#1456B8; --fabric:#0B8A7A;
-  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
-  --body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --paper:#eef2f4; --card:#ffffff; --ink:#10243a; --muted:#51647a;
+  --line:#cfd9e0; --signal:#0f7c8a; --signal-ink:#ffffff; --warn:#c98a00;
+  --display:"Familjen Grotesk","Segoe UI",Arial,sans-serif;
+  --body:"Public Sans","Segoe UI",Arial,sans-serif;
 }
 @media (prefers-color-scheme:dark){
-  :root{--paper:#0E1820;--card:#15232E;--ink:#E7EEF3;--muted:#93A5B3;--line:#243543;--signal:#6EA3F5;--fabric:#3FC7B3;}
+  :root{--paper:#0c1824; --card:#13263a; --ink:#e6eef5; --muted:#9db0c2; --line:#26405a; --signal:#4fc3d1; --signal-ink:#0c1824; --warn:#f0b429}
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 var(--body)}
-a{color:var(--signal)}
-a:focus-visible,button:focus-visible{outline:3px solid var(--signal);outline-offset:3px}
-.wrap{max-width:980px;margin:0 auto;padding:0 24px}
-header.top{display:flex;justify-content:space-between;align-items:center;padding:22px 0;gap:16px;flex-wrap:wrap}
-header.top b{font:800 18px var(--display)}
-nav a{margin-left:20px;color:var(--muted);text-decoration:none;font-weight:600}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(1.7rem,3vw,2.2rem);margin-bottom:28px}
+section{padding:72px 0;border-top:1px solid var(--line)}
+
+/* nav */
+header.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:58px}
+.brand{font-family:var(--display);font-weight:700;text-decoration:none}
+nav a{margin-left:20px;text-decoration:none;color:var(--muted);font-size:.95rem}
 nav a:hover{color:var(--ink)}
+@media(max-width:640px){nav a:nth-child(n+4){display:none}}
 
 /* hero */
-.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding:56px 0 72px}
-.hero h1{font:800 clamp(40px,7vw,68px)/1.02 var(--display);letter-spacing:-.025em;margin:0 0 18px}
-.hero p.role{font:600 20px var(--display);color:var(--fabric);margin:0 0 14px}
-.hero p.lead{color:var(--muted);max-width:52ch;margin:0 0 28px}
-.btn{display:inline-block;padding:12px 22px;border-radius:8px;font-weight:600;text-decoration:none;border:2px solid var(--signal);margin:0 10px 10px 0}
-.btn.fill{background:var(--signal);color:#fff}
-@media (prefers-color-scheme:dark){.btn.fill{color:#0E1820}}
-.fabric{width:100%;height:auto}
-.fabric .link{stroke:var(--line);stroke-width:2}
-.fabric .spine{fill:var(--signal)}
-.fabric .leaf{fill:var(--fabric)}
-.fabric .host{fill:var(--card);stroke:var(--muted);stroke-width:2}
-.fabric text{font:600 12px var(--body);fill:var(--muted)}
-.fabric .pulse{stroke:var(--signal);stroke-width:3;stroke-dasharray:6 14;fill:none;animation:flow 2.4s linear infinite}
-@keyframes flow{to{stroke-dashoffset:-20}}
-@media (prefers-reduced-motion:reduce){.fabric .pulse{animation:none}html{scroll-behavior:auto}}
+.hero{padding:64px 0 56px;border-top:0}
+.hero-top{display:grid;grid-template-columns:1fr 150px;gap:40px;align-items:center}
+.hero-top.no-photo{grid-template-columns:1fr}
+.photo{margin:0;order:2;width:150px}
+.photo img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;border:1px solid var(--line);background:var(--card)}
+@media(max-width:720px){.hero-top{grid-template-columns:1fr}.photo{order:0}}
+.hero h1{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:700}
+.hero .role{font-family:var(--display);font-size:clamp(1.2rem,2.4vw,1.5rem);color:var(--signal);font-weight:600;margin:14px 0 18px}
+.hero p.lead{max-width:60ch;color:var(--muted);margin:0 0 26px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:11px 20px;border-radius:8px;border:1.5px solid var(--ink);text-decoration:none;font-weight:600;font-size:.97rem}
+.btn.primary{background:var(--signal);border-color:var(--signal);color:var(--signal-ink)}
+.btn:hover{transform:translateY(-1px)}
 
-/* sections */
-section{padding:44px 0;border-top:1px solid var(--line)}
-section>h2{font:800 30px var(--display);letter-spacing:-.01em;margin:0 0 26px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px}
-.card h3{font:600 19px var(--display);margin:0 0 8px}
-.card p{margin:0;color:var(--muted);font-size:16px}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.tags span{border:1px solid var(--line);border-radius:999px;padding:3px 12px;font-size:14px;color:var(--ink);background:var(--paper)}
+/* topology */
+.topo{margin-top:48px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 20px 8px}
+.topo svg{width:100%;height:auto;display:block;overflow:visible}
+.topo .link{stroke:var(--line);stroke-width:3;fill:none}
+.topo .node rect,.topo .node circle{fill:var(--paper);stroke:var(--ink);stroke-width:2.5}
+.topo .node.fw rect{stroke:var(--warn)}
+.topo .node text{font:600 14px var(--display);fill:var(--ink);text-anchor:middle;pointer-events:none}
+.topo .node{cursor:pointer}
+.topo .node:hover rect,.topo .node:hover circle,.topo .node.on rect,.topo .node.on circle{fill:var(--signal)}
+.topo .node.on text,.topo .node:hover text{fill:var(--signal-ink)}
+.topo .packet{fill:var(--warn)}
+.topo-info{border-top:1px solid var(--line);margin-top:12px;padding:14px 4px 12px;min-height:5.2em}
+.topo-info strong{font-family:var(--display);font-size:1.1rem}
+.topo-info p{margin:4px 0 0;color:var(--muted)}
+.topo-hint{font-size:.88rem;color:var(--muted);margin:10px 0 0}
+@media (prefers-reduced-motion:reduce){.topo .packet{display:none}html{scroll-behavior:auto}}
 
-/* timeline: a real sequence */
-.timeline{list-style:none;margin:0;padding:0 0 0 26px;border-left:3px solid var(--line)}
-.timeline li{position:relative;padding:0 0 30px 12px}
-.timeline li::before{content:"";position:absolute;left:-36px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--paper);border:3px solid var(--fabric)}
-.timeline li:first-child::before{background:var(--fabric)}
-.timeline h3{font:600 20px var(--display);margin:0}
-.timeline .when{color:var(--muted);font-size:15px;margin:2px 0 8px}
-.timeline p{margin:0;max-width:68ch}
-.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:36px}
-ul.plain{margin:0;padding-left:20px}
-ul.plain li{margin-bottom:8px}
-footer{padding:36px 0 56px;color:var(--muted);border-top:1px solid var(--line);font-size:15px}
-@media (max-width:760px){.hero{grid-template-columns:1fr;padding-top:24px}.fabric{max-width:420px}nav a{margin:0 16px 0 0}}
+/* experience */
+.job{display:grid;grid-template-columns:190px 1fr;gap:8px 32px;padding:0 0 36px 0;margin-bottom:36px;border-bottom:1px dashed var(--line)}
+.job:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.job .when{color:var(--muted);font-size:.95rem}
+.job h3{font-size:1.3rem;margin-bottom:2px}
+.job .org{color:var(--signal);font-weight:600;margin-bottom:10px}
+.job ul{margin:0;padding-left:1.1em}
+.job li{margin-bottom:6px;max-width:68ch}
+@media(max-width:720px){.job{grid-template-columns:1fr}}
+
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px}
+.proj{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px 22px}
+.proj h3{font-size:1.15rem;margin-bottom:6px}
+.proj .meta{color:var(--muted);font-size:.9rem;margin-bottom:8px}
+.proj p{margin:0;font-size:.98rem}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px 40px}
+.skills h3{font-size:1.1rem;margin-bottom:10px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.tags li{border:1px solid var(--line);background:var(--card);border-radius:6px;padding:4px 10px;font-size:.92rem}
+
+/* certs */
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:12px;margin:0;padding:0;list-style:none}
+.certs li{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--signal);border-radius:6px;padding:12px 16px}
+.certs small{display:block;color:var(--muted)}
+
+/* contact */
+.contact p{max-width:56ch;color:var(--muted)}
+.contact dl{display:grid;grid-template-columns:110px 1fr;gap:8px 16px;margin:24px 0 0}
+.contact dt{color:var(--muted)}
+.contact dd{margin:0;font-weight:500}
+footer{padding:28px 0 40px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
 </style>
 </head>
 <body>
-<div class="wrap">
 
 <header class="top">
-  <b>Mahedi Hasan</b>
-  <nav aria-label="Sections">
-    <a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#certs">Certifications</a><a href="#contact">Contact</a>
-  </nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Mahedi Hasan</a>
+    <nav aria-label="Main">
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#certs">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
 </header>
 
-<main>
-<div class="hero">
-  <div>
-    <h1>Md Mahedi Hasan</h1>
-    <p class="role">Sr. Network Security Engineer</p>
-    <p class="lead">I design, secure and run enterprise and data centre networks. My daily tools are Fortinet firewalls, Cisco ACI, SD-WAN and large VPN estates, with SIEM and reporting on top to keep it all visible.</p>
-    <a class="btn fill" href="#contact">Get in touch</a>
-    <a class="btn" href="#projects">See my work</a>
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-top" id="heroTop">
+    <figure class="photo" id="photoBox"><img src="photo.jpg" alt="Portrait of Md. Mahedi Hasan" width="120" height="150" onerror="document.getElementById('photoBox').remove();document.getElementById('heroTop').classList.add('no-photo')"></figure>
+    <div>
+    <h1>Md. Mahedi Hasan</h1>
+    <div class="role">Senior Network Security Engineer</div>
+    <p class="lead">I design, secure, and run data center and enterprise networks for government and public-sector customers in Bangladesh. My daily tools are Fortinet (FortiGate, FortiManager, FortiAnalyzer, FortiSIEM) and Cisco ACI.</p>
+    <div class="btns">
+      <a class="btn primary" href="#contact">Get in touch</a>
+      <a class="btn" href="Mahedi_Hasan_Network_Security_Engineer_CV.pdf" download>Download CV (PDF)</a>
+      <a class="btn" href="https://linkedin.com/in/hmahedi" rel="noopener">LinkedIn</a>
+    </div>
+    </div>
+    </div>
+
+    <div class="topo" aria-label="Interactive network diagram of the environments I work in">
+      <svg viewBox="0 0 900 190" role="group" aria-label="Network path from the internet through a firewall and ACI fabric to the data center and disaster recovery site">
+        <path class="link" id="path" d="M70 95 H830"/>
+        <g class="node" tabindex="0" role="button" data-k="net" transform="translate(70 95)"><circle r="38"/><text y="5">Internet</text></g>
+        <g class="node fw" tabindex="0" role="button" data-k="fw" transform="translate(270 95)"><rect x="-52" y="-38" width="104" height="76" rx="8"/><text y="5">FortiGate</text></g>
+        <g class="node" tabindex="0" role="button" data-k="aci" transform="translate(490 95)"><rect x="-58" y="-38" width="116" height="76" rx="8"/><text y="5">Cisco ACI</text></g>
+        <g class="node" tabindex="0" role="button" data-k="dc" transform="translate(690 95)"><rect x="-46" y="-38" width="92" height="76" rx="8"/><text y="5">Data center</text></g>
+        <g class="node" tabindex="0" role="button" data-k="dr" transform="translate(830 95)"><rect x="-38" y="-38" width="76" height="76" rx="8"/><text y="5">DR site</text></g>
+        <circle class="packet" r="6">
+          <animateMotion dur="7s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear"><mpath href="#path"/></animateMotion>
+        </circle>
+      </svg>
+      <div class="topo-info" id="info" aria-live="polite">
+        <strong>Select a block</strong>
+        <p>Each block is part of the infrastructure I work on. Click one to see what I do there.</p>
+      </div>
+    </div>
+    <p class="topo-hint">Illustration only. It shows the kind of path I work on, not any customer’s real network.</p>
   </div>
-
-  <!-- spine-leaf fabric: the shape of the networks I build -->
-  <svg class="fabric" viewBox="0 0 360 300" role="img" aria-label="Diagram of a spine and leaf data centre fabric">
-    <g class="link">
-      <line x1="80" y1="60" x2="50" y2="170"/><line x1="80" y1="60" x2="180" y2="170"/><line x1="80" y1="60" x2="310" y2="170"/>
-      <line x1="180" y1="60" x2="50" y2="170"/><line x1="180" y1="60" x2="180" y2="170"/><line x1="180" y1="60" x2="310" y2="170"/>
-      <line x1="280" y1="60" x2="50" y2="170"/><line x1="280" y1="60" x2="180" y2="170"/><line x1="280" y1="60" x2="310" y2="170"/>
-      <line x1="50" y1="170" x2="50" y2="245"/><line x1="180" y1="170" x2="180" y2="245"/><line x1="310" y1="170" x2="310" y2="245"/>
-    </g>
-    <path class="pulse" d="M80 60 L180 170 L280 60"/>
-    <path class="pulse" d="M50 245 L50 170 L180 60"/>
-    <g class="spine"><rect x="55" y="42" width="50" height="36" rx="6"/><rect x="155" y="42" width="50" height="36" rx="6"/><rect x="255" y="42" width="50" height="36" rx="6"/></g>
-    <g class="leaf"><rect x="25" y="152" width="50" height="36" rx="6"/><rect x="155" y="152" width="50" height="36" rx="6"/><rect x="285" y="152" width="50" height="36" rx="6"/></g>
-    <g class="host"><circle cx="50" cy="258" r="12"/><circle cx="180" cy="258" r="12"/><circle cx="310" cy="258" r="12"/></g>
-    <text x="80" y="32" text-anchor="middle">Spine</text>
-    <text x="50" y="208" text-anchor="middle">Leaf</text>
-  </svg>
-</div>
-
-<section id="experience">
-  <h2>Experience</h2>
-  <ol class="timeline">
-    <li>
-      <h3>Sr. Network Security Engineer, Techno Path System Ltd.</h3>
-      <div class="when">January 2025 to present</div>
-      <p>Lead network security delivery on government and enterprise data centre projects: firewall design and migration, Cisco ACI fabrics, site-to-site VPN at scale, and SIEM and log analytics with FortiSIEM and FortiAnalyzer.</p>
-    </li>
-    <li>
-      <h3>GigaTech Limited</h3>
-      <div class="when"><!-- add dates --></div>
-      <p>Network and security engineering.</p>
-    </li>
-    <li>
-      <h3>Link3 Technologies</h3>
-      <div class="when"><!-- add dates --></div>
-      <p>Service provider and enterprise network operations.</p>
-    </li>
-    <li>
-      <h3>Xpress Technologies</h3>
-      <div class="when">Career start, January 2021</div>
-      <p>First network engineering role after graduating.</p>
-    </li>
-  </ol>
 </section>
 
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="grid">
-    <div class="card"><h3>Network security</h3><p>Firewall policy, segmentation, IPsec and GRE VPNs, SD-WAN, central management and logging.</p>
-      <div class="tags"><span>FortiGate</span><span>FortiManager</span><span>FortiAnalyzer</span><span>FortiSIEM</span><span>Cisco FTD / FMC</span></div></div>
-    <div class="card"><h3>Data centre</h3><p>Fabric design, multi-tenant policy and multi-site connectivity.</p>
-      <div class="tags"><span>Cisco ACI</span><span>Nexus</span><span>VXLAN BGP EVPN</span><span>Cisco DNAC</span></div></div>
-    <div class="card"><h3>Routing and switching</h3><p>Enterprise and provider-style routing across campus, WAN and DC edge.</p>
-      <div class="tags"><span>BGP</span><span>OSPF</span><span>Catalyst</span><span>MikroTik</span><span>Ruijie</span></div></div>
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+
+    <article class="job">
+      <div class="when">Nov 2025 – Present</div>
+      <div>
+        <h3>Senior Network Security Engineer</h3>
+        <div class="org">Techno Path Systems Ltd., Dhaka</div>
+        <ul>
+          <li>Manage the BREB data center network: Cisco routers, switches, firewalls, and Cisco ACI.</li>
+          <li>Administer Fortinet security: FortiGate, IPsec/SSL VPN, SD-WAN, FortiManager, FortiAnalyzer, and FortiSIEM.</li>
+          <li>Work on the Bangladesh Army and CMH firewall migration: FortiGate deployment, policy migration, VPN configuration, security monitoring, and technical training.</li>
+          <li>Run NESCO infrastructure, including SonicWall firewalls, DC–DR systems, and Cisco Unified Communications Manager.</li>
+          <li>Build site-to-site IPsec and GRE over IPsec VPNs with BGP to banks, mobile financial service providers, and other external organizations.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when">Sep 2024 – Nov 2025</div>
+      <div>
+        <h3>Network Engineer – IT Infrastructure Operations &amp; Security</h3>
+        <div class="org">Giga Tech Limited, Dhaka</div>
+        <ul>
+          <li>Designed and implemented enterprise and government LAN, WAN, data center, DC–DR, and wireless networks.</li>
+          <li>Configured Cisco routers and switches and multi-vendor firewalls: Fortinet, Palo Alto, and Cisco FTD/FMC.</li>
+          <li>Deployed SD-WAN, Cisco ACI, Cisco DNA Center, and Catalyst 9800 wireless controllers.</li>
+          <li>Supported government ICT projects including BSEC, E-Gov Network, DG Food, DWASA, and Connect BD.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when">Aug 2022 – Aug 2024</div>
+      <div>
+        <h3>Executive – Service Delivery</h3>
+        <div class="org">Link3 Technologies Ltd., Dhaka</div>
+        <ul>
+          <li>Gave Level 2 and Level 3 support to corporate clients on IP networks using OSPF, BGP, MPLS, and VRF.</li>
+          <li>Managed Layer 2 and Layer 3 VPNs, GRE tunnels, and Cisco, Juniper, Huawei, and MikroTik devices.</li>
+          <li>Monitored performance with SolarWinds and WhatsUp Gold while meeting SLA commitments.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when">Jan 2021 – Aug 2022</div>
+      <div>
+        <h3>Jr. Executive – Network Operations Center</h3>
+        <div class="org">Xpress Technologies Ltd., Dhaka</div>
+        <ul>
+          <li>Maintained EPON, GPON, and broadband networks for enterprise and residential customers.</li>
+          <li>Resolved connectivity issues on site to keep downtime short, and monitored service with The Dude and Cacti.</li>
+        </ul>
+      </div>
+    </article>
   </div>
 </section>
 
 <section id="projects">
-  <h2>Projects</h2>
-  <div class="grid">
-    <div class="card"><h3>BREB ICBS Central Data Centre</h3><p>Cisco ACI fabric, core and DMZ routing, firewall management with FMC, and a large site-to-site VPN network connecting regional offices and financial partners.</p></div>
-    <div class="card"><h3>Government firewall migration</h3><p>Planned and cut over a multi-site firewall estate to a new platform, with central logging and SIEM visibility.</p></div>
-    <div class="card"><h3>NESCO</h3><p>Catalyst and Nexus data centre network with FTD and FMC security, voice (CUCM and IP phones) and DC-DR connectivity.</p></div>
-    <div class="card"><h3>DG Food, DWASA, BCC e-Gov</h3><p>Enterprise and government network and security delivery.</p></div>
-    <div class="card"><h3>VXLAN EVPN Multi-Site lab</h3><p>EVE-NG lab on Nexus 9000v: L2 and L3 VNI, now extended to a DC-DR multi-site design with separate ASNs and an ISP transit.</p>
-      <div class="tags"><span>EVE-NG</span><span>Nexus 9000v</span><span>BGP EVPN</span></div></div>
+  <div class="wrap">
+    <h2>Selected projects</h2>
+    <div class="projects">
+      <article class="proj"><h3>Army / CMH firewall migration</h3><div class="meta">Techno Path Systems · 2025–2026</div><p>FortiGate deployment, firewall policy migration, VPN configuration, security monitoring, and training delivery.</p></article>
+      <article class="proj"><h3>ICBS central data center</h3><div class="meta">BREB · 2026</div><p>Network implementation and support for the Integrated Consumer Billing System data center.</p></article>
+      <article class="proj"><h3>Smart Distribution System</h3><div class="meta">NESCO · 2026</div><p>Design, implementation, testing, commissioning, and support.</p></article>
+      <article class="proj"><h3>Data center and disaster recovery</h3><div class="meta">DG Food · 2024–2025</div><p>Design, implementation, and support of the DC–DR network.</p></article>
+      <article class="proj"><h3>DWSNIP network improvement</h3><div class="meta">DWASA · 2024–2025</div><p>Design, implementation, and support for the Dhaka water supply network.</p></article>
+      <article class="proj"><h3>Upazila router, e-Gov Network</h3><div class="meta">BCC · 2024–2025</div><p>Implementation and support of Type 1 Upazila routers.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div><h3>Network security</h3><ul class="tags"><li>FortiGate</li><li>FortiManager</li><li>FortiAnalyzer</li><li>FortiSIEM</li><li>Cisco FTD / FMC</li><li>Palo Alto</li><li>SonicWall</li><li>High availability</li></ul></div>
+      <div><h3>Data center and SDN</h3><ul class="tags"><li>Cisco ACI</li><li>Cisco Nexus</li><li>VXLAN EVPN</li><li>DNA Center</li><li>SD-Access</li><li>DC–DR design</li></ul></div>
+      <div><h3>Routing and switching</h3><ul class="tags"><li>OSPF</li><li>BGP</li><li>MPLS</li><li>VRF</li><li>VLAN</li><li>NAT</li><li>Catalyst 9800 WLC</li></ul></div>
+      <div><h3>VPN and SD-WAN</h3><ul class="tags"><li>IPsec VPN</li><li>SSL VPN</li><li>Site-to-site VPN</li><li>GRE over IPsec</li><li>Fortinet SD-WAN</li></ul></div>
+      <div><h3>Monitoring and tools</h3><ul class="tags"><li>SolarWinds</li><li>WhatsUp Gold</li><li>The Dude</li><li>Cacti</li><li>Visio</li><li>EVE-NG</li><li>VMware</li></ul></div>
+      <div><h3>Also worked with</h3><ul class="tags"><li>Cisco CUCM</li><li>MikroTik</li><li>Ruijie</li><li>Juniper</li><li>Huawei</li></ul></div>
+    </div>
   </div>
 </section>
 
 <section id="certs">
-  <h2>Certifications and education</h2>
-  <div class="two">
-    <div>
-      <ul class="plain">
-        <li>Fortinet FCP and FCA</li>
-        <li>Cisco CCNA and CCNP Enterprise Core</li>
-        <li>Cisco U. SPCNI, Designing and Implementing Cisco Service Provider Cloud Network Infrastructure (Nov 2026)</li>
-        <li>MikroTik MTCNA, MTCRE, MTCSE</li>
-        <li>Ruijie R&amp;S and WLAN</li>
-      </ul>
-    </div>
-    <div>
-      <ul class="plain">
-        <li>BSc in Electronics and Communication Engineering, Institute of Science and Technology (2021)</li>
-        <li>Member, Bangladesh Computer Society</li>
-      </ul>
-    </div>
+  <div class="wrap">
+    <h2>Certifications</h2>
+    <ul class="certs">
+      <li>Fortinet Certified Professional – Security Operations<small>Fortinet · 2025</small></li>
+      <li>Fortinet Certified Associate – Cybersecurity<small>Fortinet · 2025</small></li>
+      <li>Cisco Certified Specialist – Enterprise Core<small>Cisco · 2025</small></li>
+      <li>Cisco Certified Network Associate (CCNA)<small>Cisco · 2024</small></li>
+      <li>MikroTik MTCSE and MTCRE<small>MikroTik · 2024</small></li>
+      <li>MikroTik MTCNA<small>MikroTik · 2023</small></li>
+      <li>Ruijie RCNA – Routing &amp; Switching, and Wireless LAN<small>Ruijie</small></li>
+    </ul>
   </div>
 </section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Open to conversations about network security, data centre design and new roles.</p>
-  <a class="btn fill" href="mailto:hmahedi699@gmail.com">Send an email</a>
-  <a class="btn" href="https://www.linkedin.com/in/hmahedi699/">LinkedIn</a>
-  <a class="btn" href="https://github.com/hasan-mahedi">GitHub</a>
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p>Looking for help with a firewall migration, a data center network, or a VPN rollout? Send me a short note about the project.</p>
+    <dl>
+      <dt>Email</dt><dd><a href="mailto:hmahedi699@gmail.com">hmahedi699@gmail.com</a></dd>
+      <dt>Phone</dt><dd><a href="tel:+8801681796732">+880 1681 796732</a></dd>
+      <dt>LinkedIn</dt><dd><a href="https://linkedin.com/in/hmahedi" rel="noopener">linkedin.com/in/hmahedi</a></dd>
+      <dt>Location</dt><dd>Dhaka, Bangladesh</dd>
+    </dl>
+  </div>
 </section>
 </main>
 
-<footer>&copy; 2026 Md Mahedi Hasan. Dhaka, Bangladesh.</footer>
-</div>
+<footer>
+  <div class="wrap">© <span id="yr">2026</span> Md. Mahedi Hasan. Bangladesh Computer Society member, No. M03106.</div>
+</footer>
+
+<script>
+(function(){
+  var data = {
+    net:{t:"Internet edge",d:"Site-to-site IPsec and GRE over IPsec VPNs with BGP to banks, mobile financial service providers, and partner organizations."},
+    fw:{t:"FortiGate firewall",d:"Firewall deployment and policy migration, IPsec/SSL VPN, and SD-WAN, managed with FortiManager and monitored in FortiAnalyzer and FortiSIEM."},
+    aci:{t:"Cisco ACI fabric",d:"Data center fabric built on Cisco ACI and Nexus, with VXLAN EVPN, alongside routing and switching in OSPF, BGP, and VRF."},
+    dc:{t:"Data center",d:"Day-to-day operation of data center networks for BREB, NESCO, and government projects, including NAT and troubleshooting."},
+    dr:{t:"Disaster recovery site",d:"DC–DR design and implementation so that critical services stay reachable if the primary site fails."}
+  };
+  var info = document.getElementById("info");
+  var nodes = document.querySelectorAll(".node");
+  function show(n){
+    var k = n.getAttribute("data-k");
+    nodes.forEach(function(x){x.classList.remove("on")});
+    n.classList.add("on");
+    info.innerHTML = "";
+    var s = document.createElement("strong"); s.textContent = data[k].t;
+    var p = document.createElement("p"); p.textContent = data[k].d;
+    info.appendChild(s); info.appendChild(p);
+  }
+  nodes.forEach(function(n){
+    n.addEventListener("click", function(){show(n)});
+    n.addEventListener("keydown", function(e){
+      if(e.key === "Enter" || e.key === " "){e.preventDefault(); show(n);}
+    });
+  });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
 </body>
 </html>
